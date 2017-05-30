@@ -8,7 +8,8 @@ $(document).ready(function() {
     var timeInit = performance.now();
     var rot = $('#rot').val();
     var type = $('#type').val();
-    var key = $('#key').val();
+    var keyString = $('#key').val();
+    console.log(keyString);
     var message = $('#input').val();
 
     var messageLength = message.length;
@@ -16,9 +17,9 @@ $(document).ready(function() {
     var bigKey;
     var keyLength = 0;
     var endLoop = false;
-    if(key.length > 0){
+    if(keyString.length > 0){
       while(!endLoop){
-        bigKey = bigKey.concat(key);
+        bigKey = bigKey.concat(keyString);
         keyLength = bigKey.length;
         if(keyLength >= messageLength){
           endLoop = true;
