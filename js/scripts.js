@@ -13,7 +13,8 @@ $(document).ready(function() {
 
     var messageLength = message.length;
     console.log(messageLength);
-
+    var bigKey;
+    var keyLength = 0;
     var endLoop = false;
     if(key.length > 0){
       while(!endLoop){
