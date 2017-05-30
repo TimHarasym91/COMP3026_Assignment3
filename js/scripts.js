@@ -8,8 +8,8 @@ $(document).ready(function() {
     var timeInit = performance.now();
     var rot = $('#rot').val();
     var type = $('#type').val();
-    var keyString = $('#key').val();
-    var message = $('#input').val();
+    var keyString = $('#key').val().toUpperCase();
+    var message = $('#input').val().toUpperCase();
     var alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
     var encryptedMessage = ' ';
