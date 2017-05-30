@@ -9,7 +9,6 @@ $(document).ready(function() {
     var rot = $('#rot').val();
     var type = $('#type').val();
     var keyString = $('#key').val();
-    console.log(keyString);
     var message = $('#input').val();
 
     var messageLength = message.length;
@@ -19,7 +18,7 @@ $(document).ready(function() {
     var endLoop = false;
     if(keyString.length > 0){
       while(!endLoop){
-        bigKey = bigKey.concat(keyString);
+        bigKey = bigKey+keyString;
         keyLength = bigKey.length;
         if(keyLength >= messageLength){
           endLoop = true;
