@@ -15,4 +15,4 @@ $(document).ready(function() {
     console.log(key);
     console.log(input);
   }
-}
+});
