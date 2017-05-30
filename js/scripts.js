@@ -40,8 +40,17 @@ $(document).ready(function() {
         }
       }
       newIndex = letterDistance+distanceFromA;
-      if(newIndex > 26){
-        newIndex = newIndex % 26;
+      if(rot =='rot0'){
+        if(newIndex >= 26){
+          newIndex = newIndex % 26;
+        }
+      }
+      if(rot=='rot1'){
+        newIndex = newIndex+1;
+
+        if(newIndex >= 26){
+          newIndex = newIndex % 26;
+        }
       }
       encryptedMessage = encryptedMessage + alphabet[newIndex];
     }
@@ -49,6 +58,6 @@ $(document).ready(function() {
 
     var timeEnd = performance.now();
     var totalTime = timeEnd - timeInit;
-    console.log("It took: "+ totalTime);
+    console.log("It took "+ totalTime.toPrecision(4) + " milliseconds to complete.");
   }
 });
