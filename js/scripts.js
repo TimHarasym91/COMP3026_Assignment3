@@ -14,10 +14,22 @@ $(document).ready(function() {
     var messageLength = message.length;
     console.log(messageLength);
 
-    bigKey = key + key + key + key + key + key;
-    console.log(bigKey);
+    var endLoop = false;
+    if(key.length > 0){
+      while(!endLoop){
+        bigKey = bigKey.concat(key);
+        keyLength = bigKey.length;
+        if(keyLength >= messageLength){
+          endLoop = true;
+        }
+      }
+    }
+
+    var trimmedKey = bigKey.substring(0, messageLength);
+    console.log(trimmedKey);
 
     var timeEnd = performance.now();
-    console.log("It took: "+timeEnd - timeInit);
+    var totalTime = timeEnd - timeInit;
+    console.log("It took: "+ totalTime);
   }
 });
