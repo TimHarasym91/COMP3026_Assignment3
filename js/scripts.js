@@ -28,6 +28,8 @@ $(document).ready(function() {
     }
     var newIndex;
     var trimmedKey = bigKey.substring(0, messageLength);
+
+    // ENCRYPTION BEGINS
     var distanceFromA;
     var letterDistance;
     for(var i=0;i<trimmedKey.length;i++){
@@ -39,25 +41,32 @@ $(document).ready(function() {
           distanceFromA = x;
         }
       }
-      newIndex = letterDistance+distanceFromA;
-      if(rot =='rot0'){
+      if(type == 'encrypt'){
+        newIndex = letterDistance+distanceFromA;
+        if(rot=='rot1'){
+          newIndex = newIndex+1;
+        }
         if(newIndex >= 26){
           newIndex = newIndex % 26;
         }
       }
-      if(rot=='rot1'){
-        newIndex = newIndex+1;
+      if(type == 'decrypt'){
+        newIndex = letterDistance-distanceFromA;
+        if(rot=='rot1'){
+          newIndex = newIndex-1;
+        }
+        if(newIndex < 0 ){
+          newIndex = 26 - Math.abs(newIndex);
+        }
+      }
 
-        if(newIndex >= 26){
-          newIndex = newIndex % 26;
-        }
-      }
       encryptedMessage = encryptedMessage + alphabet[newIndex];
     }
-    console.log(encryptedMessage);
+    $('#results').text(encryptedMessage);
 
     var timeEnd = performance.now();
     var totalTime = timeEnd - timeInit;
-    console.log("It took "+ totalTime.toPrecision(4) + " milliseconds to complete.");
+    totalTime = totalTime.toPrecision(4);
+    $('#time').text(totalTime+" milliseconds");
   }
 });

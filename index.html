@@ -12,20 +12,30 @@
 
   <label>Message To Encrypt:</label>
   <input id="input" type="text" name="input" max="60" value="">
+  <br/>
   <label>Encryprion Key:</label>
   <input id="key" type="text" name="key" max="10" value="">
+  <br/>
   <label>Encrypt/Decrypt</label>
   <select id="type" class="" name="type">
     <option value="encrypt">Encrypt</option>
     <option value="decrypt">Decrypt</option>
   </select>
+  <br/>
   <label>ROT #</label>
   <select id="rot" class="" name="rot">
     <option value="rot0">ROT0</option>
     <option value="rot1">ROT1</option>
   </select>
+  <br/>
   <input id="start" type="submit" name="start" value="Start">
-  <div id="results">
-  </div>
+  <br/>
+  <br/>
+
+    <label>Results: </label><span id="results"></span>
+    <br/>
+    <br/>
+    <label>Calculation Time: </label><span id="time"></span>
+
 </body>
 </html>
