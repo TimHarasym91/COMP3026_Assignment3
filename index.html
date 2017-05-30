@@ -1,1 +1,31 @@
-<h1>Hello World!</h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 3: Vignere Cipher</title>
+</head>
+<body>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <!-- Scripts -->
+
+  <label>Message To Encrypt:</label>
+  <input id="input" type="text" name="input" max="60" value="">
+  <label>Encryprion Key:</label>
+  <input id="key" type="text" name="key" max="10" value="">
+  <label>Encrypt/Decrypt</label>
+  <select id="type" class="" name="type">
+    <option value="encrypt">Encrypt</option>
+    <option value="decrypt">Decrypt</option>
+  </select>
+  <label>ROT #</label>
+  <select id="rot" class="" name="rot">
+    <option value="rot0">ROT0</option>
+    <option value="rot1">ROT1</option>
+  </select>
+  <input id="start" type="submit" name="start" value="Start">
+  <div id="results">
+  </div>
+</body>
+</html>
